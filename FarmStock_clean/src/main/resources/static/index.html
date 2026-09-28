@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>FarmStock Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🌾 FarmStock</h1>
+
+    <p>Farmer's Produce Inventory Management</p>
+
+</header>
+
+
+<main class="container">
+
+
+    <!-- DASHBOARD -->
+
+    <h2 class="section-title">📊 Dashboard</h2>
+
+
+    <section class="dashboard">
+
+        <div class="card">
+
+            <h3>Total Crops</h3>
+
+            <p id="cropCount">0</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Total Harvest</h3>
+
+            <p id="totalHarvest">0 kg</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Total Sold</h3>
+
+            <p id="totalSold">0 kg</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Current Stock</h3>
+
+            <p id="stockValue">0 kg</p>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>Total Revenue</h3>
+
+            <p id="revenueValue">₹0</p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ADD CROP -->
+
+    <section class="panel">
+
+        <h2>🌱 Add Crop</h2>
+
+        <div class="form-row">
+
+            <input
+                    type="text"
+                    id="cropName"
+                    placeholder="Enter crop name">
+
+            <button onclick="addCrop()">
+                Add Crop
+            </button>
+
+        </div>
+
+        <p id="cropMessage"></p>
+
+    </section>
+
+
+    <!-- CROP LIST -->
+
+    <section class="panel">
+
+        <h2>📋 Crop List</h2>
+
+        <table>
+
+            <thead>
+
+            <tr>
+                <th>ID</th>
+                <th>Crop Name</th>
+                <th>Action</th>
+            </tr>
+
+            </thead>
+
+            <tbody id="cropTableBody"></tbody>
+
+        </table>
+
+    </section>
+
+
+    <!-- HARVEST -->
+
+    <section class="panel">
+
+        <h2>🌾 Add Harvest</h2>
+
+        <div class="form-grid">
+
+            <select id="harvestCrop">
+
+                <option value="">
+                    Select Crop
+                </option>
+
+            </select>
+
+
+            <input
+                    type="number"
+                    id="harvestQuantity"
+                    placeholder="Quantity (kg)"
+                    min="1">
+
+
+            <input
+                    type="date"
+                    id="harvestDate">
+
+
+            <button onclick="addHarvest()">
+                Add Harvest
+            </button>
+
+        </div>
+
+        <p id="harvestMessage"></p>
+
+    </section>
+
+
+    <!-- SALE -->
+
+    <section class="panel">
+
+        <h2>💰 Record Sale</h2>
+
+        <div class="form-grid">
+
+            <select id="saleCrop">
+
+                <option value="">
+                    Select Crop
+                </option>
+
+            </select>
+
+
+            <input
+                    type="number"
+                    id="saleQuantity"
+                    placeholder="Quantity (kg)"
+                    min="1">
+
+
+            <input
+                    type="number"
+                    id="salePrice"
+                    placeholder="Price per kg"
+                    min="1">
+
+
+            <input
+                    type="date"
+                    id="saleDate">
+
+
+            <button onclick="addSale()">
+                Record Sale
+            </button>
+
+        </div>
+
+        <p id="saleMessage"></p>
+
+    </section>
+
+
+    <!-- CROP HISTORY -->
+
+    <section class="panel">
+
+        <h2>🔎 Crop-wise History</h2>
+
+        <div class="form-row">
+
+            <select id="historyCrop">
+
+                <option value="">
+                    Select Crop
+                </option>
+
+            </select>
+
+
+            <button onclick="viewCropHistory()">
+                View History
+            </button>
+
+        </div>
+
+
+        <div id="historyResult"></div>
+
+    </section>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
